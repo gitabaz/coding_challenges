@@ -10,10 +10,7 @@ fn←¯1⊑•args
 b←•file.Bytes fn
 c←•file.Chars fn
 l←+´nl=b
-w←{
-	ws←+˝' '‿nl=⌜b
-	(≠-+´∘(1⊸=))(«/ws)-/ws
-}
+w←+´0<≠¨c⊔˜(+`∧¬)⊸-+´c⊸=¨nl‿' '
 
 r←l‿w‿(≠c)‿(≠b)/˜"-l"‿"-w"‿"-m"‿"-c"∊flags
 •Out ∾' '∾¨(•Fmt¨ r)∾⋈fn
